@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController as DashboardController;
 use App\Http\Controllers\Admin\ProjectController as ProjectController;
+use App\Http\Controllers\Admin\TypeController as TypeController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Project;
 use Doctrine\DBAL\Schema\Index;
@@ -25,6 +26,7 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('/projects', ProjectController::class)->parameters(["projects" => "project:id"]);
+    Route::resource('/types', TypeController::class);
 });
 
 Route::middleware('auth')->group(function () {
