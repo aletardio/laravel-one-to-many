@@ -40,9 +40,9 @@
                         @enderror
                     </div>
                     <div class="form-group my-3">
-                        <label for="type_id" class="control-label">Seleziona Categoria</label>
+                        <label for="type_id" class="control-label">Seleziona tipo</label>
                         <select name="type_id" id="type_id" class="form-select @error('type_id') is-invalid @enderror">
-                            <option value="">Seleziona categoria</option>
+                            <option value="">Seleziona tipo</option>
                             @foreach ($types as $type)
                                 <option value="{{ $type->id }}",>{{ $type->name }}</option>
                             @endforeach
