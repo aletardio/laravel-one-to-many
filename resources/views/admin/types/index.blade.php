@@ -36,6 +36,13 @@
                                                 title="Visualizza progetto" class="btn btn-sm btn-square btn-primary me-2">
                                                 <i class="fas fa-eye"></i>
                                             </a>
+                                            <button type="submit" class="btn btn-sm btn-square btn-danger"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#modal_type_delete-{{ $type->id }}" data-type="types"
+                                                data-title="{{ $type->title }}">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                            @include('admin.projects.partials.modal_type_delete')
                                         </div>
                                     </td>
                                 </tr>
