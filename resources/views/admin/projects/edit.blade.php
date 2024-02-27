@@ -49,6 +49,17 @@
                         @enderror
                     </div>
                     <div class="form-group my-3">
+                        <label for="type_id" class="control-label">Seleziona tipo</label>
+                        <select name="type_id" id="type_id" class="form-select @error('type_id') is-invalid @enderror">
+                            <option value="">Seleziona tipo</option>
+                            @foreach ($types as $type)
+                                <option value="{{ $type->id }}" @selected($type->id == old('type_id', $project->type ? $project->type->id : ''))>
+                                    {{ $type->name }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group my-3">
                         <label for="description"
                             class="control-label @error('description') is-invalid @enderror">Descrizione:</label>
                         <textarea name="description" id="description" cols="100" rows="10" placeholder="Descrizione"

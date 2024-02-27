@@ -44,7 +44,7 @@
                         <select name="type_id" id="type_id" class="form-select @error('type_id') is-invalid @enderror">
                             <option value="">Seleziona tipo</option>
                             @foreach ($types as $type)
-                                <option value="{{ $type->id }}",>{{ $type->name }}</option>
+                                <option value="{{ $type->id }}">{{ $type->name }}</option>
                             @endforeach
                         </select>
                     </div>
