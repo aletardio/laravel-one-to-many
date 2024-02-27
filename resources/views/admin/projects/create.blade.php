@@ -40,6 +40,15 @@
                         @enderror
                     </div>
                     <div class="form-group my-3">
+                        <label for="type_id" class="control-label">Seleziona Categoria</label>
+                        <select name="type_id" id="type_id" class="form-select @error('type_id') is-invalid @enderror">
+                            <option value="">Seleziona categoria</option>
+                            @foreach ($types as $type)
+                                <option value="{{ $type->id }}",>{{ $type->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group my-3">
                         <label for="description" class="control-label">Descrizione:</label>
                         <textarea name="description" id="description" cols="100" rows="10" placeholder="Descrizione"
                             class="form-control @error('description') is-invalid @enderror" required>{{ old('description') }}</textarea>

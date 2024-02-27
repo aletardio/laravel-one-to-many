@@ -5,7 +5,12 @@
         <div class="row">
             <div class="col-12">
                 <h3 class="text-uppercase">{{ $project->title }}</h3>
-                <img src="{{ asset('/storage/' . $project->cover_image) }}" alt="{{ $project->title }}" class="w-50">
+                @if ($project->cover_image)
+                    <img src="{{ asset('/storage/' . $project->cover_image) }}" alt="{{ $project->title }}" class="w-50">
+                @endif
+                <h5 class="my-2">
+                    <strong>{{ !empty($project->type->name) ? $project->type->name : 'Senza tipo' }}</strong>
+                </h5>
                 <p class="my-2">{{ $project->description }}</p>
             </div>
         </div>

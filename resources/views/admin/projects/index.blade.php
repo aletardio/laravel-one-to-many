@@ -17,9 +17,10 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Title</th>
+                                <th>Titolo</th>
+                                <th>Categoria</th>
                                 <th>Slug</th>
-                                <th>Description</th>
+                                <th>Descrizione</th>
                                 <th>Tools</th>
                             </tr>
                         </thead>
@@ -28,6 +29,7 @@
                                 <tr>
                                     <td>{{ $project->id }}</td>
                                     <td>{{ $project->title }}</td>
+                                    <td>{{ $project->type != null ? $project->type->name : 'Senza tipo' }}</td>
                                     <td>{{ $project->slug }}</td>
                                     <td>{{ Str::limit($project->description, 20, '...') }}</td>
                                     <td>
